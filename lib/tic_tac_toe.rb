@@ -103,10 +103,13 @@ class TicTacToe
     end
     
     def play
+      @board = Array.new(9, " ")  
       display_board
       while !over?
         turn
       end
       won? ? puts("Congratulations #{winner}!") : puts("Cat's Game!")
+      puts "Would you like to play again? (y or n)"
+      gets.strip == "y" ? play : puts("Goodbye!")
     end
   end
